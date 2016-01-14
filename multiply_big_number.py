@@ -96,6 +96,10 @@ if __name__ == '__main__':
   b = int(sys.argv[1])
   n = int(sys.argv[2])
 
+  if n > 255:
+    print("You should increase the power. Max supported is 255")
+    sys.exit(1);
+
   powers = {}
   max_powers=8
   powers[0] = str(b)
@@ -108,7 +112,7 @@ if __name__ == '__main__':
     powers[i] = p
   print("printing powers")
   for i in range(0,max_powers):
-    print("power of %d is %s"%(1<<i,powers[i]))
+    print("power of %d to %d is %s"%(b,1<<i,powers[i]))
   result_so_far = "1"
   for i in range(max_powers-1,-1,-1):
     ipow2 = 1<<(i)
@@ -118,7 +122,5 @@ if __name__ == '__main__':
       while result_so_far[0] == "0":
         result_so_far = result_so_far[1:]
       n -= ipow2
-  if n != 0:
-    print("You should increase the power")
   print ("%d raised to %s is %s"%(b,sys.argv[2],result_so_far))
 
