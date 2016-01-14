@@ -93,8 +93,13 @@ def multiply_big_number(num1, len_num1, num2, len_num2):
 if __name__ == '__main__':
   init_char_to_num(char_to_num)
 
-  b = int(sys.argv[1])
-  n = int(sys.argv[2])
+  try:
+    b = int(sys.argv[1])
+    n = int(sys.argv[2])
+  except Exception,e:
+    print("Usage: %s <base> <power-required>")
+    print("Got error in parsing:%s"%str(e))
+    sys.exit(1)
 
   if n > 255:
     print("You should increase the power. Max supported is 255")

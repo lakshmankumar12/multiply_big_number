@@ -3,7 +3,7 @@ Multiplying Big Numbers
 
 .Sample invocation
 ----
-➜  /drive_c/Users/lnara002/cygwin/github/multiply_big_number (master|…)$ ./multiply_big_number.py 3 123
+$ ./multiply_big_number.py 3 123
 printing powers
 power of 3 to 1 is 3
 power of 3 to 2 is 9
