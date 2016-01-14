@@ -1,0 +1,25 @@
+Multiplying Big Numbers
+=======================
+
+.Sample invocation
+----
+➜  /drive_c/Users/lnara002/cygwin/github/multiply_big_number (master|…)$ ./multiply_big_number.py 3 123
+printing powers
+power of 3 to 1 is 3
+power of 3 to 2 is 9
+power of 3 to 4 is 81
+power of 3 to 8 is 6561
+power of 3 to 16 is 43046721
+power of 3 to 32 is 1853020188851841
+power of 3 to 64 is 3433683820292511364657849089281
+power of 3 to 128 is 11790184577738575380069115406181787432066241602635841108096961
+123 is more or equal than 64, so multiplying this power 6
+59 is more or equal than 32, so multiplying this power 5
+27 is more or equal than 16, so multiplying this power 4
+11 is more or equal than 8, so multiplying this power 3
+3 is more or equal than 2, so multiplying this power 1
+1 is more or equal than 1, so multiplying this power 0
+3 raised to 123 is 48519278097613370879511002892482207828934785053651979872827
+----
+
+
