@@ -42,13 +42,17 @@ def multiply_big_number(num1, len_num1, num2, len_num2):
 
   #pad both numbers to make them equi-length
   max_len = max(len_num1,len_num2)
+
+  if max_len <= 1:
+    return direct_multiply(num1,max_len,num2,max_len)
+
+  if max_len%2 == 1:
+    max_len += 1
   if len_num1 < max_len:
     num1 = "0" * (max_len-len_num1) + num1
   if len_num2 < max_len:
     num2 = "0" * (max_len-len_num2) + num2
 
-  if max_len <= 1:
-    return direct_multiply(num1,max_len,num2,max_len)
 
   msb_size = max_len/2
   lsb_size = max_len-msb_size  #lsb-split may be 1 higher or same as msb_size
@@ -80,7 +84,7 @@ def multiply_big_number(num1, len_num1, num2, len_num2):
   (third_part_sum,third_part_carry) = sum_big_num(ac[msb_size:],msb_size,adbc[:lsb_size],msb_size,second_part_carry)
   result = third_part_sum + result
 
-  (forth_part_sum,discard) = sum_big_num(ac[:msb_size],msb_size,"",0,third_part_carry)
+  (forth_part_sum,discard) = sum_big_num(ac[:msb_size],msb_size,"",0,third_part_carry+adbc_carry)
   result = forth_part_sum + result
 
   while len(result) > len_num1 + len_num2:
